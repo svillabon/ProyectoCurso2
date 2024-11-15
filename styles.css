@@ -1,0 +1,93 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    background-color: #f3f4f6;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #003366;
+    color: white;
+    height: 100vh;
+    padding: 1em;
+    position: fixed;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 1em;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.4em;
+}
+
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8em 0;
+    display: block;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+    font-size: 1.1em;
+}
+
+.sidebar nav a:hover {
+    background-color: #0052cc;
+    color: #f3f4f6;
+}
+
+/* Contenido Principal */
+.contenido {
+    margin-left: 250px;
+    padding: 2em;
+    width: calc(100% - 250px);
+}
+
+header h1 {
+    color: #003366;
+    font-size: 2em;
+}
+
+.seccion {
+    display: none;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+.bg-gradient {
+    background: linear-gradient(45deg, #f06, #f90);
+}
+
+.contenido-seccion {
+    text-align: center;
+    padding: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 0.8em;
+    text-align: center;
+}
+
+img.img-ejemplo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 1em;
+}

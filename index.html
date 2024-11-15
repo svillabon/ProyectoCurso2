@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Aulas - Universidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación Lateral -->
+    <aside class="sidebar d-flex flex-column align-items-center py-4">
+        <img src="img/logo_universidad.png" alt="Logo Universidad" class="logo mb-4">
+        <h2 class="text-center text-white mb-4" style="font-family: 'Arial', sans-serif;">Antonio José Camacho</h2>
+        <nav class="nav flex-column">
+            <a href="#" onclick="mostrarSeccion('inicio')" class="nav-link">Inicio</a>
+            <a href="#" onclick="mostrarSeccion('horarios')" class="nav-link">Horarios</a>
+            <a href="#" onclick="mostrarSeccion('notificaciones')" class="nav-link">Notificaciones</a>
+            <a href="#" onclick="mostrarSeccion('asignacion')" class="nav-link">Asignación de Aulas</a>
+            <a href="#" onclick="mostrarSeccion('estadisticas')" class="nav-link">Estadísticas</a>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <div class="contenido">
+        <header class="text-center my-4">
+            <h1>Bienvenido al Sistema de Gestión de Aulas</h1>
+        </header>
+
+        <section id="inicio" class="seccion activa bg-gradient">
+            <div class="contenido-seccion">
+                <h2 class="text-center">Dashboard</h2>
+                <p class="text-center">Consulta rápidamente la información de aulas, horarios y notificaciones.</p>
+                <img src="img/dashboard.png" alt="Ejemplo Dashboard" class="img-fluid mx-auto d-block">
+            </div>
+        </section>
+
+        <section id="horarios" class="seccion bg-light">
+            <div class="contenido-seccion">
+                <h2 class="text-center">Consulta de Horarios</h2>
+                <input type="text" id="buscarMateria" class="form-control mt-3 mb-4" placeholder="Buscar por materia...">
+                <table id="tabla-horarios" class="table table-striped text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Aula</th>
+                            <th>Horario</th>
+                            <th>Materia</th>
+                            <th>Modalidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Datos dinámicos de horarios -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="notificaciones" class="seccion bg-info">
+            <div class="contenido-seccion">
+                <h2 class="text-center">Notificaciones</h2>
+                <ul id="lista-notificaciones" class="list-group mt-3">
+                    <li class="list-group-item">No hay nuevas notificaciones</li>
+                    <!-- Lista de notificaciones dinámica -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="asignacion" class="seccion bg-light">
+            <div class="contenido-seccion">
+                <h2 class="text-center">Asignación de Aulas</h2>
+                <form id="form-asignacion" class="mt-4">
+                    <div class="mb-3">
+                        <label for="materia" class="form-label">Materia:</label>
+                        <input type="text" id="materia" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="horario" class="form-label">Horario:</label>
+                        <input type="time" id="horario" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modalidad" class="form-label">Modalidad:</label>
+                        <select id="modalidad" class="form-select">
+                            <option value="Presencial">Presencial</option>
+                            <option value="Virtual">Virtual</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="asignarAula()">Asignar Aula</button>
+                </form>
+                <div id="resultado-asignacion" class="mt-4"></div>
+            </div>
+        </section>
+
+        <section id="estadisticas" class="seccion bg-gradient">
+            <div class="contenido-seccion">
+                <h2 class="text-center">Estadísticas de Uso</h2>
+                <p class="text-center">Consulta estadísticas sobre el uso de aulas y horarios ocupados.</p>
+                <img src="img/estadisticas.png" alt="Gráficos Estadísticas" class="img-fluid mx-auto d-block">
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
